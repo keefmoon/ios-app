@@ -105,6 +105,6 @@ class RegisterProcessUITests: XCTestCase {
         passwordSecureTextField.typeText("dev")
         nextButton.tap()
         XCTAssertTrue(app.alerts["Error"].exists)
-        XCTAssertTrue(app.alerts["Error"].staticTexts["The client credentials are invalid"].exists)
+        XCTAssertTrue(app.alerts["Error"].staticTexts["Authentification error"].exists)
     }
 }

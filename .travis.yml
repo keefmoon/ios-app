@@ -14,5 +14,8 @@ before_install:
   - gem install -N cocoapods -v 1.2.0
   - pod repo update > /dev/null
   - gem update fastlane --no-ri --no-rdoc --no-document
+  - git clone https://github.com/wallabag/WallabagKit ..
+  - cd ../WallabagKit/ && git checkout dev-2.0
+  - cd ../wallabag
 script:
   - fastlane test

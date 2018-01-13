@@ -64,7 +64,7 @@ class ArticlesUITests: XCTestCase {
         nextButton.tap()
     }
 
-    func testAddAndDeleteArticle() {
+    func xtestAddAndDeleteArticle() {
         let app = XCUIApplication()
 
         XCTAssertFalse(app.alerts["Add link"].exists)
@@ -77,7 +77,7 @@ class ArticlesUITests: XCTestCase {
         alert.buttons["Add"].tap()
     }
 
-    func testStarArticle() {
+    func xtestStarArticle() {
         let app = XCUIApplication()
 
         addArticle()
@@ -89,7 +89,6 @@ class ArticlesUITests: XCTestCase {
         cell.buttons["Star"].tap()
         cell.swipeLeft()
         XCTAssertTrue(cell.buttons["Unstar"].exists)
-        cell.swipeLeft()
         cell.buttons["Unstar"].tap()
         cell.swipeLeft()
         XCTAssertTrue(cell.buttons["Star"].exists)
