@@ -55,10 +55,15 @@ final class ArticleViewController: UIViewController {
             speechSynthetizer.speak(utterance)
             speechButton.image = #imageLiteral(resourceName: "lipsfilled")
             analytics.send(.synthesis(state: true))
+            
+            UIApplication.shared.beginReceivingRemoteControlEvents()
+            
         } else {
             speechSynthetizer.stopSpeaking(at: .word)
             speechButton.image = #imageLiteral(resourceName: "lips")
             analytics.send(.synthesis(state: false))
+            
+            UIApplication.shared.endReceivingRemoteControlEvents()
         }
     }
 
@@ -134,5 +139,39 @@ extension ArticleViewController {
         starButton.accessibilityLabel = "Star".localized
         speechButton.accessibilityLabel = "Speech".localized
         deleteButton.accessibilityLabel = "Delete".localized
+    }
+}
+
+// Remote control events
+extension ArticleViewController {
+    
+    override var canBecomeFirstResponder: Bool {
+        return true
+    }
+    
+    override func remoteControlReceived(with event: UIEvent?) {
+        
+        guard let ev = event else { return }
+        
+        switch (ev.type, ev.subtype, speechSynthetizer.isSpeaking) {
+            
+        case (.remoteControl, .remoteControlTogglePlayPause, true):
+            speechSynthetizer.pauseSpeaking(at: .word)
+            
+        case (.remoteControl, .remoteControlTogglePlayPause, false):
+            speechSynthetizer.continueSpeaking()
+            
+        case (.remoteControl, .remoteControlPlay, _):
+            speechSynthetizer.continueSpeaking()
+            
+        case (.remoteControl, .remoteControlPause, _):
+            speechSynthetizer.pauseSpeaking(at: .word)
+            
+        case (.remoteControl, .remoteControlStop, _):
+            speechSynthetizer.stopSpeaking(at: .word)
+            
+        default:
+            break
+        }
     }
 }

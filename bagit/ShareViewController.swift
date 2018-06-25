@@ -45,6 +45,9 @@ class ShareViewController: UIViewController {
     }
 
     override func viewWillAppear(_ animated: Bool) {
+        
+        super.viewWillAppear(animated)
+        
         if Setting.isWallabagConfigured(),
             let host = Setting.getHost(),
             let username = Setting.getUsername(),
