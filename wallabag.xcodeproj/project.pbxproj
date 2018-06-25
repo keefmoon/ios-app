@@ -631,11 +631,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9C987A6E1DB79826005515F4 /* Build configuration list for PBXNativeTarget "wallabag" */;
 			buildPhases = (
-				675CB1B13E826E9746D3DE45 /* [CP] Check Pods Manifest.lock */,
 				9C32BF121E369FBB00199DF2 /* ShellScript */,
+				675CB1B13E826E9746D3DE45 /* [CP] Check Pods Manifest.lock */,
 				9C987A3F1DB79826005515F4 /* Sources */,
-				9C987A401DB79826005515F4 /* Frameworks */,
 				9C987A411DB79826005515F4 /* Resources */,
+				9C987A401DB79826005515F4 /* Frameworks */,
 				1DF9979C51B322B7FE60E0F4 /* [CP] Embed Pods Frameworks */,
 				9CBA6C6B1E16FC2B000B9AE6 /* Embed App Extensions */,
 			);
@@ -695,8 +695,8 @@
 			buildPhases = (
 				1064727F3787E02D9CFA3173 /* [CP] Check Pods Manifest.lock */,
 				9CBA6C591E16FC2B000B9AE6 /* Sources */,
-				9CBA6C5A1E16FC2B000B9AE6 /* Frameworks */,
 				9CBA6C5B1E16FC2B000B9AE6 /* Resources */,
+				9CBA6C5A1E16FC2B000B9AE6 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -738,7 +738,7 @@
 				TargetAttributes = {
 					9C987A421DB79826005515F4 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = G97URPCGB8;
+						DevelopmentTeam = YAXJZJ267E;
 						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -755,21 +755,21 @@
 					};
 					9C987A591DB79826005515F4 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = G97URPCGB8;
+						DevelopmentTeam = YAXJZJ267E;
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 9C987A421DB79826005515F4;
 					};
 					9C987A641DB79826005515F4 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = G97URPCGB8;
+						DevelopmentTeam = YAXJZJ267E;
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 9C987A421DB79826005515F4;
 					};
 					9CBA6C5C1E16FC2B000B9AE6 = {
 						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = G97URPCGB8;
+						DevelopmentTeam = YAXJZJ267E;
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -780,7 +780,7 @@
 					};
 					9CC0D7161E22AB15002E4E94 = {
 						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = G97URPCGB8;
+						DevelopmentTeam = YAXJZJ267E;
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 9C987A421DB79826005515F4;
@@ -968,7 +968,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 		BDE3CDF5182757371AC5B97E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1324,11 +1324,11 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = wallabag/wallabag.entitlements;
 				CURRENT_PROJECT_VERSION = 114;
-				DEVELOPMENT_TEAM = G97URPCGB8;
+				DEVELOPMENT_TEAM = YAXJZJ267E;
 				INFOPLIST_FILE = wallabag/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "fr.district-web.wallabag";
+				PRODUCT_BUNDLE_IDENTIFIER = com.keefmoon.wallabag;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "wallabag/Lib/wallabag-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1347,11 +1347,11 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = wallabag/wallabag.entitlements;
 				CURRENT_PROJECT_VERSION = 114;
-				DEVELOPMENT_TEAM = G97URPCGB8;
+				DEVELOPMENT_TEAM = YAXJZJ267E;
 				INFOPLIST_FILE = wallabag/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "fr.district-web.wallabag";
+				PRODUCT_BUNDLE_IDENTIFIER = com.keefmoon.wallabag;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "wallabag/Lib/wallabag-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
@@ -1366,7 +1366,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = G97URPCGB8;
+				DEVELOPMENT_TEAM = YAXJZJ267E;
 				INFOPLIST_FILE = wallabagTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "fr.district-web.wallabagTests";
@@ -1384,7 +1384,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = G97URPCGB8;
+				DEVELOPMENT_TEAM = YAXJZJ267E;
 				INFOPLIST_FILE = wallabagTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "fr.district-web.wallabagTests";
@@ -1401,7 +1401,7 @@
 			baseConfigurationReference = 33649D7F894D49168B9683D2 /* Pods-wallabagUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
-				DEVELOPMENT_TEAM = G97URPCGB8;
+				DEVELOPMENT_TEAM = YAXJZJ267E;
 				INFOPLIST_FILE = wallabagUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "fr.district-web.wallabagUITests";
@@ -1417,7 +1417,7 @@
 			baseConfigurationReference = 9B9EB64D938632DA7CDDFD2A /* Pods-wallabagUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
-				DEVELOPMENT_TEAM = G97URPCGB8;
+				DEVELOPMENT_TEAM = YAXJZJ267E;
 				INFOPLIST_FILE = wallabagUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "fr.district-web.wallabagUITests";
@@ -1434,11 +1434,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = bagit/bagit.entitlements;
-				DEVELOPMENT_TEAM = G97URPCGB8;
+				DEVELOPMENT_TEAM = YAXJZJ267E;
 				INFOPLIST_FILE = bagit/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "fr.district-web.wallabag.bagit";
+				PRODUCT_BUNDLE_IDENTIFIER = com.keefmoon.wallabag.bagit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
@@ -1452,11 +1452,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = bagit/bagit.entitlements;
-				DEVELOPMENT_TEAM = G97URPCGB8;
+				DEVELOPMENT_TEAM = YAXJZJ267E;
 				INFOPLIST_FILE = bagit/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "fr.district-web.wallabag.bagit";
+				PRODUCT_BUNDLE_IDENTIFIER = com.keefmoon.wallabag.bagit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
@@ -1468,7 +1468,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
-				DEVELOPMENT_TEAM = G97URPCGB8;
+				DEVELOPMENT_TEAM = YAXJZJ267E;
 				INFOPLIST_FILE = wallabagScreenshotUITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -1484,7 +1484,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
-				DEVELOPMENT_TEAM = G97URPCGB8;
+				DEVELOPMENT_TEAM = YAXJZJ267E;
 				INFOPLIST_FILE = wallabagScreenshotUITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

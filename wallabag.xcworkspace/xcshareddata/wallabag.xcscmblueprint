@@ -10,7 +10,7 @@
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "2DD179AD-664D-43BC-AD6D-3CF134503AED",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
     "01505634E0EEFA7B598CA74F2E872076C01198DF" : "WallabagKit\/",
-    "9F221A9779FD5BF6738149F7B36558CAB0954809" : "wallabag\/"
+    "9F221A9779FD5BF6738149F7B36558CAB0954809" : "wallabag-ios-app\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "wallabag",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,

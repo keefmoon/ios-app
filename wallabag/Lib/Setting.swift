@@ -11,7 +11,7 @@ import AVFoundation
 
 class Setting {
 
-    static let sharedDomain = "group.wallabag.share_extension"
+    static let sharedDomain = "group.com.keefmoon.apps"
     static var standard = UserDefaults.standard
     static var shared = UserDefaults(suiteName: sharedDomain)!
 
