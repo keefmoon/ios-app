@@ -13,7 +13,7 @@ import RealmSwift
 
 final class ArticleViewController: UIViewController {
 
-    lazy var speechSynthetizer: AVSpeechSynthesizer = AVSpeechSynthesizer()
+    var audioManager = AudioManager.shared
     let analytics = AnalyticsManager()
 
     var entry: Entry! {
@@ -48,22 +48,30 @@ final class ArticleViewController: UIViewController {
     }
 
     @IBAction func speech(_ sender: Any) {
-        if !speechSynthetizer.isSpeaking {
-            let utterance = AVSpeechUtterance(string: entry.content!.withoutHTML)
-            utterance.rate = Setting.getSpeechRate()
-            utterance.voice = Setting.getSpeechVoice()
-            speechSynthetizer.speak(utterance)
-            speechButton.image = #imageLiteral(resourceName: "lipsfilled")
-            analytics.send(.synthesis(state: true))
+        
+        // Before Change
+        switch audioManager.state {
             
-            UIApplication.shared.beginReceivingRemoteControlEvents()
+        case .notPlaying:
+            audioManager.speak(entry)
             
-        } else {
-            speechSynthetizer.stopSpeaking(at: .word)
+        case .paused:
+            audioManager.resume()
+            
+        case .playing:
+            audioManager.pause()
+        }
+        
+        // After Change
+        switch audioManager.state {
+            
+        case .notPlaying, .paused:
             speechButton.image = #imageLiteral(resourceName: "lips")
             analytics.send(.synthesis(state: false))
             
-            UIApplication.shared.endReceivingRemoteControlEvents()
+        case .playing:
+            speechButton.image = #imageLiteral(resourceName: "lipsfilled")
+            analytics.send(.synthesis(state: true))
         }
     }
 
@@ -109,7 +117,7 @@ final class ArticleViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
-        speechSynthetizer.stopSpeaking(at: .immediate)
+        audioManager.stop()
         UIApplication.shared.isIdleTimerDisabled = false
     }
 
@@ -139,39 +147,5 @@ extension ArticleViewController {
         starButton.accessibilityLabel = "Star".localized
         speechButton.accessibilityLabel = "Speech".localized
         deleteButton.accessibilityLabel = "Delete".localized
-    }
-}
-
-// Remote control events
-extension ArticleViewController {
-    
-    override var canBecomeFirstResponder: Bool {
-        return true
-    }
-    
-    override func remoteControlReceived(with event: UIEvent?) {
-        
-        guard let ev = event else { return }
-        
-        switch (ev.type, ev.subtype, speechSynthetizer.isSpeaking) {
-            
-        case (.remoteControl, .remoteControlTogglePlayPause, true):
-            speechSynthetizer.pauseSpeaking(at: .word)
-            
-        case (.remoteControl, .remoteControlTogglePlayPause, false):
-            speechSynthetizer.continueSpeaking()
-            
-        case (.remoteControl, .remoteControlPlay, _):
-            speechSynthetizer.continueSpeaking()
-            
-        case (.remoteControl, .remoteControlPause, _):
-            speechSynthetizer.pauseSpeaking(at: .word)
-            
-        case (.remoteControl, .remoteControlStop, _):
-            speechSynthetizer.stopSpeaking(at: .word)
-            
-        default:
-            break
-        }
     }
 }

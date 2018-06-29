@@ -11,6 +11,9 @@
 		0975850A1FE53E0B0089825B /* KeychainPasswordItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097585091FE53E0B0089825B /* KeychainPasswordItem.swift */; };
 		0975850B1FE5533C0089825B /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE369751DE63D030005E20E /* Setting.swift */; };
 		0975850C1FE5535A0089825B /* KeychainPasswordItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097585091FE53E0B0089825B /* KeychainPasswordItem.swift */; };
+		2F4BA65320E1A75B007A5578 /* Entry+SpeakableContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4BA65220E1A75B007A5578 /* Entry+SpeakableContent.swift */; };
+		2F4BA65520E1B14E007A5578 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4BA65420E1B14E007A5578 /* AudioManager.swift */; };
+		2F9E899420E5965D0058714A /* ArticleViewController+RemoteControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9E899320E5965D0058714A /* ArticleViewController+RemoteControl.swift */; };
 		621665201E0CFC2600438EE2 /* white.css in Resources */ = {isa = PBXBuildFile; fileRef = 6216651F1E0CFC2600438EE2 /* white.css */; };
 		622923E91E10F8A5007B2307 /* dusk.css in Resources */ = {isa = PBXBuildFile; fileRef = 622923E81E10F8A5007B2307 /* dusk.css */; };
 		94E4BE19881745BDBEBA546F /* Pods_bagit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B96F6D5610DD6249AEA66D5F /* Pods_bagit.framework */; };
@@ -163,6 +166,9 @@
 		081F547345F9E70248A02531 /* Pods-bagit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bagit.release.xcconfig"; path = "Pods/Target Support Files/Pods-bagit/Pods-bagit.release.xcconfig"; sourceTree = "<group>"; };
 		097585091FE53E0B0089825B /* KeychainPasswordItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainPasswordItem.swift; sourceTree = "<group>"; };
 		1EA9F29E7C865EE08172FE69 /* Pods-wallabag-bagit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallabag-bagit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-wallabag-bagit/Pods-wallabag-bagit.debug.xcconfig"; sourceTree = "<group>"; };
+		2F4BA65220E1A75B007A5578 /* Entry+SpeakableContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Entry+SpeakableContent.swift"; sourceTree = "<group>"; };
+		2F4BA65420E1B14E007A5578 /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
+		2F9E899320E5965D0058714A /* ArticleViewController+RemoteControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArticleViewController+RemoteControl.swift"; sourceTree = "<group>"; };
 		33649D7F894D49168B9683D2 /* Pods-wallabagUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallabagUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-wallabagUITests/Pods-wallabagUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		3678DDB92217E137039674C2 /* Pods_wallabagUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wallabagUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50A74F0181E01BFFEA22A662 /* Pods_wallabag_bagit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wallabag_bagit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -325,6 +331,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F4BA65120E1A733007A5578 /* ListenLater */ = {
+			isa = PBXGroup;
+			children = (
+				2F4BA65220E1A75B007A5578 /* Entry+SpeakableContent.swift */,
+				2F4BA65420E1B14E007A5578 /* AudioManager.swift */,
+				2F9E899320E5965D0058714A /* ArticleViewController+RemoteControl.swift */,
+			);
+			path = ListenLater;
+			sourceTree = "<group>";
+		};
 		37E0BE100D92CFD90F2A6716 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -534,6 +550,7 @@
 		9C987A451DB79826005515F4 /* wallabag */ = {
 			isa = PBXGroup;
 			children = (
+				2F4BA65120E1A733007A5578 /* ListenLater */,
 				9C174B9420CBD75E00AD8A09 /* WallabagKit */,
 				9C2A2DAC1DD4A6D900EDA4E8 /* Cell */,
 				9C181B841DB8D47C00D941EB /* Controller */,
@@ -1034,6 +1051,7 @@
 				9C21927D1DBFF44700F628C2 /* ArticleTableViewCell.swift in Sources */,
 				9CF1F2251DBE9D150086B98B /* LoginViewController.swift in Sources */,
 				9C174BA220CBD99E00AD8A09 /* WallabagAuth.swift in Sources */,
+				2F4BA65320E1A75B007A5578 /* Entry+SpeakableContent.swift in Sources */,
 				9CE369741DE632030005E20E /* SettingsTableViewController.swift in Sources */,
 				9CA9659B1F16B68B009C6377 /* White.swift in Sources */,
 				9CA9659F1F16B71E009C6377 /* Dusk.swift in Sources */,
@@ -1056,6 +1074,8 @@
 				9CE9F2061DE2151B002E06F5 /* AboutViewController.swift in Sources */,
 				9CF1F21C1DBE943C0086B98B /* HomeViewController.swift in Sources */,
 				9C174BA820CBD9F000AD8A09 /* TokenAdapter.swift in Sources */,
+				2F4BA65520E1B14E007A5578 /* AudioManager.swift in Sources */,
+				2F9E899420E5965D0058714A /* ArticleViewController+RemoteControl.swift in Sources */,
 				9C8311861E06F56C004ACD5D /* ThemedTableViewCell.swift in Sources */,
 				9C174BA620CBD9DB00AD8A09 /* WallabagAuthError.swift in Sources */,
 				9C75961C1DBB567E0096614B /* String.swift in Sources */,
