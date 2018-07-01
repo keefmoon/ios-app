@@ -1,19 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Vl8-yY-Bdt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14269.14" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Vl8-yY-Bdt">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14252.5"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="HelveticaNeue.ttc">
-            <string>HelveticaNeue</string>
-        </array>
         <array key="UbuntuTitling-Bold.ttf">
             <string>UbuntuTitling-Bold</string>
         </array>
@@ -166,7 +161,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="QNI-iO-q9h">
-                                                    <rect key="frame" x="318" y="6" width="51" height="31"/>
+                                                    <rect key="frame" x="318" y="6.5" width="51" height="31"/>
                                                     <connections>
                                                         <action selector="justifySwitch:" destination="cre-7a-Z1t" eventType="valueChanged" id="Ba9-qU-MLO"/>
                                                     </connections>
@@ -221,7 +216,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Crn-AO-baC">
-                                                    <rect key="frame" x="318" y="6" width="51" height="31"/>
+                                                    <rect key="frame" x="318" y="6.5" width="51" height="31"/>
                                                     <connections>
                                                         <action selector="badgeSwitch:" destination="cre-7a-Z1t" eventType="valueChanged" id="NNc-N7-cQ3"/>
                                                     </connections>
@@ -272,7 +267,7 @@
                                         <rect key="frame" x="0.0" y="631.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xQw-6I-CZu" id="JQd-KS-aCF">
-                                            <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="349" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Voice" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cJZ-4l-0Le">
@@ -358,7 +353,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="wallabag v2 for iOS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OmZ-lq-KqG">
-                                <rect key="frame" x="54.5" y="88" width="267" height="34"/>
+                                <rect key="frame" x="54" y="88" width="267" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="CMc-3o-0on"/>
                                 </constraints>
@@ -373,19 +368,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version 1.0.0 build 14" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p4F-5W-KZX">
-                                <rect key="frame" x="103" y="130" width="170" height="21.5"/>
+                                <rect key="frame" x="102.5" y="130" width="170" height="21.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Made by Maxime Marinel (@bourvill)" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wsy-Ao-UlA">
-                                <rect key="frame" x="51" y="627" width="274" height="20"/>
+                                <rect key="frame" x="50.5" y="627" width="274" height="20"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qk9-mt-OdM">
-                                <rect key="frame" x="113" y="583" width="150" height="36"/>
+                                <rect key="frame" x="112.5" y="583" width="150" height="36"/>
                                 <attributedString key="attributedText">
                                     <fragment content="We use a cool icon of  https://icons8.com">
                                         <attributes>
@@ -493,6 +488,13 @@
                             <outlet property="delegate" destination="Ykf-Ei-TaT" id="BgX-GI-IEe"/>
                         </connections>
                     </tableView>
+                    <toolbarItems>
+                        <barButtonItem image="lips" id="27b-Sz-J6H">
+                            <connections>
+                                <action selector="speech:" destination="zsG-x9-2za" id="YNg-hP-dE7"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" title=" Articles" id="ZjL-wI-QTt">
                         <barButtonItem key="leftBarButtonItem" systemItem="bookmarks" id="Meg-lP-qaT">
                             <connections>
@@ -505,6 +507,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="s1k-2R-l2H">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -545,10 +548,38 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Eb2-gX-W3Y"/>
-                                    <barButtonItem image="lips" id="3vd-F9-MfW">
-                                        <connections>
-                                            <action selector="speech:" destination="zsG-x9-2za" id="1zn-dC-Xwb"/>
-                                        </connections>
+                                    <barButtonItem style="plain" id="ZSx-zs-wyH">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="3JA-XS-yCB">
+                                            <rect key="frame" x="151" y="11" width="24" height="22"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" image="previous"/>
+                                            <connections>
+                                                <action selector="previousButtonPressedWithSender:" destination="zsG-x9-2za" eventType="touchUpInside" id="xAz-Lx-vxy"/>
+                                            </connections>
+                                        </button>
+                                    </barButtonItem>
+                                    <barButtonItem width="20" style="plain" systemItem="fixedSpace" id="Vx6-gr-anS"/>
+                                    <barButtonItem style="plain" id="Dhp-wv-lgI">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="USy-R2-wrj">
+                                            <rect key="frame" x="195" y="11" width="17" height="22"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" image="play"/>
+                                            <state key="selected" image="pause"/>
+                                            <connections>
+                                                <action selector="playPauseButtonToggledWithSender:" destination="zsG-x9-2za" eventType="touchUpInside" id="aW6-L1-bqo"/>
+                                            </connections>
+                                        </button>
+                                    </barButtonItem>
+                                    <barButtonItem width="20" style="plain" systemItem="fixedSpace" id="pWJ-W6-u1H"/>
+                                    <barButtonItem style="plain" id="adI-sN-jfJ">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Tz9-RA-Rn8">
+                                            <rect key="frame" x="232" y="11" width="24" height="22"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" image="next"/>
+                                            <connections>
+                                                <action selector="nextButtonPressedWithSender:" destination="zsG-x9-2za" eventType="touchUpInside" id="MA1-tY-Y5E"/>
+                                            </connections>
+                                        </button>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="uLk-DD-ezt"/>
                                     <barButtonItem image="trash" id="IC0-DD-8KU">
@@ -596,8 +627,13 @@
                     <connections>
                         <outlet property="contentWeb" destination="vxC-9m-osy" id="hEI-YH-oMy"/>
                         <outlet property="deleteButton" destination="IC0-DD-8KU" id="Kct-QB-Efq"/>
+                        <outlet property="nextBarButtonItem" destination="adI-sN-jfJ" id="2TE-bd-cIp"/>
+                        <outlet property="nextButton" destination="Tz9-RA-Rn8" id="8Zq-K8-kpc"/>
+                        <outlet property="playPauseBarButtonItem" destination="Dhp-wv-lgI" id="WeM-uG-ss7"/>
+                        <outlet property="playPauseButton" destination="USy-R2-wrj" id="dmW-tJ-LcF"/>
+                        <outlet property="previousBarButtonItem" destination="ZSx-zs-wyH" id="A0G-6W-p0D"/>
+                        <outlet property="previousButton" destination="3JA-XS-yCB" id="aTM-pI-gwH"/>
                         <outlet property="readButton" destination="X3k-oF-ZXC" id="hnK-8N-UcN"/>
-                        <outlet property="speechButton" destination="3vd-F9-MfW" id="qky-Bl-1uV"/>
                         <outlet property="starButton" destination="VcU-fa-V5f" id="YqQ-L0-xvZ"/>
                     </connections>
                 </viewController>
@@ -714,7 +750,7 @@
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mDJ-gL-tA5">
-                                <rect key="frame" x="169" y="198" width="37" height="29"/>
+                                <rect key="frame" x="169.5" y="198" width="36" height="32"/>
                                 <fontDescription key="fontDescription" name="UbuntuTitling-Bold" family="Ubuntu Titling" pointSize="17"/>
                                 <state key="normal" title="Next"/>
                                 <connections>
@@ -722,7 +758,7 @@
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bkh-cz-HgQ">
-                                <rect key="frame" x="16" y="235" width="343" height="97.5"/>
+                                <rect key="frame" x="16" y="238" width="343" height="97.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Well, now the client_id and client_secret.
 This token are secret and can be found in your developer page, And create a new client or use an already existing token</string>
@@ -730,7 +766,7 @@ This token are secret and can be found in your developer page, And create a new 
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AM9-CO-l8h">
-                                <rect key="frame" x="91" y="340.5" width="193" height="29"/>
+                                <rect key="frame" x="91" y="343.5" width="193" height="32"/>
                                 <fontDescription key="fontDescription" name="UbuntuTitling-Bold" family="Ubuntu Titling" pointSize="17"/>
                                 <state key="normal" title="Open my developer page"/>
                                 <connections>
@@ -1159,6 +1195,10 @@ But you can contribute financially by making a donation whenever you want to sup
     <resources>
         <image name="lips" width="22" height="8"/>
         <image name="logo-icon-black-no-bg" width="200" height="200"/>
+        <image name="next" width="24" height="15"/>
+        <image name="pause" width="15" height="19"/>
+        <image name="play" width="17" height="19"/>
+        <image name="previous" width="24" height="15"/>
         <image name="readed" width="22" height="22"/>
         <image name="starred" width="22" height="22"/>
         <image name="trash" width="22" height="22"/>

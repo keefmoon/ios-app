@@ -30,8 +30,13 @@ final class ArticleViewController: UIViewController {
     @IBOutlet weak var contentWeb: UIWebView!
     @IBOutlet weak var readButton: UIBarButtonItem!
     @IBOutlet weak var starButton: UIBarButtonItem!
-    @IBOutlet weak var speechButton: UIBarButtonItem!
     @IBOutlet weak var deleteButton: UIBarButtonItem!
+    @IBOutlet weak var playPauseBarButtonItem: UIBarButtonItem!
+    @IBOutlet weak var previousBarButtonItem: UIBarButtonItem!
+    @IBOutlet weak var nextBarButtonItem: UIBarButtonItem!
+    @IBOutlet weak var playPauseButton: UIButton!
+    @IBOutlet weak var previousButton: UIButton!
+    @IBOutlet weak var nextButton: UIButton!
 
     @IBAction func add(_ sender: Any) {
         addHandler?()
@@ -45,34 +50,6 @@ final class ArticleViewController: UIViewController {
     @IBAction func star(_ sender: Any) {
         starHandler?(entry)
         updateUi()
-    }
-
-    @IBAction func speech(_ sender: Any) {
-        
-        // Before Change
-        switch audioManager.state {
-            
-        case .notPlaying:
-            audioManager.speak(entry)
-            
-        case .paused:
-            audioManager.resume()
-            
-        case .playing:
-            audioManager.pause()
-        }
-        
-        // After Change
-        switch audioManager.state {
-            
-        case .notPlaying, .paused:
-            speechButton.image = #imageLiteral(resourceName: "lips")
-            analytics.send(.synthesis(state: false))
-            
-        case .playing:
-            speechButton.image = #imageLiteral(resourceName: "lipsfilled")
-            analytics.send(.synthesis(state: true))
-        }
     }
 
     @IBAction func shareMenu(_ sender: UIBarButtonItem) {
@@ -99,6 +76,7 @@ final class ArticleViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         analytics.sendScreenViewed(.articleView)
         navigationItem.title = entry.title
         updateUi()
@@ -145,7 +123,56 @@ extension ArticleViewController {
     private func setupAccessibilityLabel() {
         readButton.accessibilityLabel = "Read".localized
         starButton.accessibilityLabel = "Star".localized
-        speechButton.accessibilityLabel = "Speech".localized
         deleteButton.accessibilityLabel = "Delete".localized
+    }
+}
+
+extension ArticleViewController {
+    
+    @IBAction func playPauseButtonToggled(sender: UIButton) {
+        sender.isSelected = !sender.isSelected
+        audioPlayPauseToggle()
+    }
+    
+    @IBAction func previousButtonPressed(sender: UIButton) {
+        audioPrevious()
+    }
+    
+    @IBAction func nextButtonPressed(sender: UIButton) {
+        audioNext()
+    }
+    
+    fileprivate func audioPlayPauseToggle() {
+        
+        // Before Change
+        switch audioManager.state {
+            
+        case .notPlaying:
+            audioManager.speak(entry)
+            
+        case .paused:
+            audioManager.resume()
+            
+        case .playing:
+            audioManager.pause()
+        }
+        
+        // After Change
+        switch audioManager.state {
+            
+        case .notPlaying, .paused:
+            analytics.send(.synthesis(state: false))
+            
+        case .playing:
+            analytics.send(.synthesis(state: true))
+        }
+    }
+    
+    fileprivate func audioPrevious() {
+        // TODO
+    }
+    
+    fileprivate func audioNext() {
+        // TODO
     }
 }

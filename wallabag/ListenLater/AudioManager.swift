@@ -35,19 +35,23 @@ class AudioManager: UIResponder {
     
     func speak(_ entry: Entry) {
         
-        guard let title = entry.title, let content = entry.speakableContent else { return }
+        guard let title = entry.title else { return }
         
-        let toSpeak = "\(title). \(content)"
+        var content = entry.speakableContent
+        content.insert(title, at: 0)
         nowPlaying.nowPlayingInfo = nowPlayingAttributes(for: entry)
-        addSpeakableContent(toSpeak)
+        addSpeakableContent(content)
     }
     
-    func addSpeakableContent(_ content: String) {
+    func addSpeakableContent(_ content: [String]) {
         
-        let utterance = AVSpeechUtterance(string: content)
-        utterance.rate = speechRate
-        utterance.voice = Setting.getSpeechVoice()
-        speechSynthetizer.speak(utterance)
+        for paragraph in content {
+            
+            let utterance = AVSpeechUtterance(string: paragraph)
+            utterance.rate = speechRate
+            utterance.voice = Setting.getSpeechVoice()
+            speechSynthetizer.speak(utterance)
+        }
         
         UIApplication.shared.beginReceivingRemoteControlEvents()
         

@@ -10,12 +10,21 @@ import Foundation
 
 extension Entry {
     
-    var speakableContent: String? {
+    var speakableContent: [String] {
         
-        guard let content = content else { return nil }
+        guard let content = content else { return [] }
         
-        let processedContent = content.replacingOccurrences(of: "<p>", with: ". ")
-            .replacingOccurrences(of: "\'", with: "'")
+        let paragraphs = content
+            .replacingOccurrences(of: "<p[^>]+>", with: "<p>", options: .regularExpression, range: nil)
+            .components(separatedBy: "<p>").filter { $0.count > 0 }
+        let processedParagraphs = paragraphs.map(processParagraph)
+        
+        return processedParagraphs
+    }
+    
+    private func processParagraph(_ paragraph: String) -> String {
+        
+        let processedContent = paragraph.replacingOccurrences(of: "\'", with: "'")
             .replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
             .replacingOccurrences(of: "-", with: " ")
         
