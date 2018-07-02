@@ -30,6 +30,8 @@ final class VoiceChoiceTableViewController: UITableViewController {
 
         if voice.identifier == Setting.getSpeechVoice()?.identifier {
             cell.accessoryType = .checkmark
+        } else {
+            cell.accessoryType = .none
         }
 
         return cell
