@@ -10,7 +10,7 @@ import Foundation
 import AVFoundation
 import MediaPlayer
 
-class AudioManager: UIResponder {
+class AudioManager {
     
     enum State {
         case notPlaying
@@ -21,8 +21,81 @@ class AudioManager: UIResponder {
     static var shared: AudioManager = AudioManager()
     
     lazy var speechSynthetizer: AVSpeechSynthesizer = AVSpeechSynthesizer()
+    var remoteCommandCenter: MPRemoteCommandCenter = .shared()
     var nowPlaying: MPNowPlayingInfoCenter = .default()
-    private(set) var state: State = .notPlaying
+    private(set) var state: State = .notPlaying {
+        didSet {
+            switch state {
+            case .notPlaying:
+                nowPlaying.playbackState = .stopped
+                
+            case .paused:
+                nowPlaying.playbackState = .paused
+                
+            case .playing:
+                nowPlaying.playbackState = .playing
+            }
+        }
+    }
+    
+    init() {
+        
+        remoteCommandCenter.togglePlayPauseCommand.addTarget { [weak self] _ in
+            
+            guard let strongSelf = self else { return .commandFailed }
+            
+            switch strongSelf.state {
+            case .playing:
+                strongSelf.pause()
+                return .success
+            case .paused:
+                strongSelf.resume()
+                return .success
+            case .notPlaying:
+                return .noSuchContent
+            }
+        }
+        
+        remoteCommandCenter.playCommand.addTarget { [weak self] _ in
+            
+            guard let strongSelf = self else { return .commandFailed }
+            
+            switch strongSelf.state {
+            case .playing:
+                return .success
+            case .paused:
+                strongSelf.resume()
+                return .success
+            case .notPlaying:
+                return .noSuchContent
+            }
+        }
+        
+        remoteCommandCenter.pauseCommand.addTarget { [weak self] _ in
+            
+            guard let strongSelf = self else { return .commandFailed }
+            
+            switch strongSelf.state {
+            case .playing:
+                strongSelf.pause()
+                return .success
+            case .paused:
+                return .success
+            case .notPlaying:
+                return .noSuchContent
+            }
+        }
+        
+        remoteCommandCenter.changePlaybackRateCommand.supportedPlaybackRates = nowPlayingSupportedSpeechRates()
+        remoteCommandCenter.changePlaybackRateCommand.addTarget { event -> MPRemoteCommandHandlerStatus in
+            guard let changeRateEvent = event as? MPChangePlaybackRateCommandEvent else {
+                return .commandFailed
+            }
+            Setting.setSpeechRate(value: changeRateEvent.playbackRate)
+            // TODO: Pause and add new partial utterance with new speech rate.
+            return .success
+        }
+    }
     
     var speechRate: Float {
         get {
@@ -94,38 +167,30 @@ class AudioManager: UIResponder {
         
         return attributes
     }
-}
-
-// Remote control events
-extension AudioManager {
     
-    override var canBecomeFirstResponder: Bool {
-        return true
-    }
+    private func nowPlayingSupportedSpeechRates() -> [NSNumber] {
     
-    override func remoteControlReceived(with event: UIEvent?) {
+        var rates = [NSNumber]()
+        let increment: Float = 0.5
+        var speechRate: Float = AVSpeechUtteranceMinimumSpeechRate
         
-        guard let ev = event else { return }
-        
-        switch (ev.type, ev.subtype, speechSynthetizer.isSpeaking) {
+        while speechRate < AVSpeechUtteranceDefaultSpeechRate {
             
-        case (.remoteControl, .remoteControlTogglePlayPause, true):
-            speechSynthetizer.pauseSpeaking(at: .word)
-            
-        case (.remoteControl, .remoteControlTogglePlayPause, false):
-            speechSynthetizer.continueSpeaking()
-            
-        case (.remoteControl, .remoteControlPlay, _):
-            speechSynthetizer.continueSpeaking()
-            
-        case (.remoteControl, .remoteControlPause, _):
-            speechSynthetizer.pauseSpeaking(at: .word)
-            
-        case (.remoteControl, .remoteControlStop, _):
-            speechSynthetizer.stopSpeaking(at: .word)
-            
-        default:
-            break
+            rates.append(NSNumber(value: speechRate))
+            speechRate += increment
         }
+        
+        speechRate = AVSpeechUtteranceDefaultSpeechRate
+        
+        while speechRate < AVSpeechUtteranceMaximumSpeechRate {
+            
+            rates.append(NSNumber(value: speechRate))
+            speechRate += increment
+        }
+        
+        speechRate = AVSpeechUtteranceMaximumSpeechRate
+        rates.append(NSNumber(value: speechRate))
+        
+        return rates
     }
 }
